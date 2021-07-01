@@ -1,0 +1,49 @@
+<template>
+  <div>
+    <table class="bordered">
+      <thead>
+      <tr>
+        <th>날짜</th>
+        <th>주문상태</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-for="item in dataStore.detailHistory" :key="item">
+        <td>{{ item.start_time }}</td>
+        <td>{{ item.order_status }}</td>
+      </tr>
+      </tbody>
+
+    </table>
+  </div>
+</template>
+
+<script>
+import CommonMixin from '@/admin/mixins/common-mixin'
+export default {
+  name: 'order-history-info-form',
+  mixins: [CommonMixin],
+  components: {
+  },
+  props: {
+    dataStore: {
+      default() {
+        return {}
+      }
+    }
+  },
+  data() {
+    return {
+    }
+  },
+  computed: {
+  },
+  methods: {
+  }
+}
+</script>
+<style scoped>
+.bordered {
+  width: 100%;
+}
+</style>
